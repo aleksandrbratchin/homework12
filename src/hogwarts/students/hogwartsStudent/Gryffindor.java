@@ -1,8 +1,9 @@
 package hogwarts.students.hogwartsStudent;
 
-public class GryffindorStudent extends HogwartsStudent {
+public class Gryffindor extends Hogwarts {
 
     private final String title = "Гриффиндор";
+
     @Override
     String getTitle() {
         return title;
@@ -15,8 +16,7 @@ public class GryffindorStudent extends HogwartsStudent {
     private final int bravery;
 
 
-
-    public GryffindorStudent(String name, String surname, int magicalPower, int transgressionRange, int nobility, int honor, int bravery) {
+    public Gryffindor(String name, String surname, int magicalPower, int transgressionRange, int nobility, int honor, int bravery) {
         super(name, surname, magicalPower, transgressionRange);
         this.nobility = nobility;
         this.honor = honor;
@@ -45,14 +45,13 @@ public class GryffindorStudent extends HogwartsStudent {
     }
 
     @Override
-    public String compareByFacultyProperties(HogwartsStudent hogwartsStudent) {
-        if (hogwartsStudent instanceof GryffindorStudent gryffindorStudent) {
-            return (nobility + honor + bravery) > (gryffindorStudent.getNobility() + gryffindorStudent.getHonor() + gryffindorStudent.getBravery())?
-                    getFullName() + " лучший " + title + "ец чем " + gryffindorStudent.getFullName() :
-                    getFullName() + " хуже " + title + "ец чем " + gryffindorStudent.getFullName();
+    public String compareByFacultyProperties(Hogwarts hogwarts) {
+        if (hogwarts instanceof Gryffindor gryffindor) {
+            return (nobility + honor + bravery) > (gryffindor.getNobility() + gryffindor.getHonor() + gryffindor.getBravery()) ?
+                    getFullName() + " лучший " + title + "ец чем " + gryffindor.getFullName() :
+                    getFullName() + " хуже " + title + "ец чем " + gryffindor.getFullName();
         }
-        return "Нелязя сравнить студетнов из разных факультетов";
-
+        return getErrorMessage(hogwarts);
     }
 
 }

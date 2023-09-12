@@ -13,7 +13,6 @@ public abstract class Student {
         return name + " " + surname;
     }
 
-
     @Override
     public String toString() {
         return getFullName() + "\n";

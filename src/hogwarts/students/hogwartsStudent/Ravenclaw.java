@@ -48,13 +48,9 @@ public class Ravenclaw extends Hogwarts {
                 "\t\tТворчество: " + creation + "\n";
     }
 
-    @Override
-    public String compareByFacultyProperties(Hogwarts hogwarts) {
-        if (hogwarts instanceof Ravenclaw ravenclaw) {
-            return (mind + wisdom + wit + creation) > (ravenclaw.getMind() + ravenclaw.getCreation() + ravenclaw.getWit() + ravenclaw.getWisdom()) ?
-                    getFullName() + " лучший " + title + "ец чем " + ravenclaw.getFullName() :
-                    getFullName() + " хуже " + title + "ец чем " + ravenclaw.getFullName();
-        }
-        return getErrorMessage(hogwarts);
+    public String compare(Ravenclaw ravenclaw) {
+        return (mind + wisdom + wit + creation) > (ravenclaw.getMind() + ravenclaw.getCreation() + ravenclaw.getWit() + ravenclaw.getWisdom()) ?
+                getFullName() + " лучший " + title + "ец чем " + ravenclaw.getFullName() :
+                getFullName() + " хуже " + title + "ец чем " + ravenclaw.getFullName();
     }
 }

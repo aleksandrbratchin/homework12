@@ -25,18 +25,19 @@ public class Main {
         }
 
         System.out.println("Сравнение учеников из одного факультета по параметрам факультета\n");
-        System.out.println(hogwarts[0].compareByFacultyProperties(hogwarts[1]));
-        System.out.println(hogwarts[3].compareByFacultyProperties(hogwarts[5]));
-        System.out.println(hogwarts[6].compareByFacultyProperties(hogwarts[8]));
-        System.out.println(hogwarts[9].compareByFacultyProperties(hogwarts[11]));
+
+        System.out.println(((Gryffindor) hogwarts[0]).compare((Gryffindor) hogwarts[1]));
+        System.out.println(((Slytherin) hogwarts[3]).compare((Slytherin) hogwarts[5]));
+        System.out.println(((Hufflepuff) hogwarts[6]).compare((Hufflepuff) hogwarts[8]));
+        System.out.println(((Ravenclaw) hogwarts[9]).compare((Ravenclaw) hogwarts[11]));
 
         System.out.println();
-        System.out.println("Сравнение учеников из разных факультетов по параметрам факультета\n");
-        System.out.println(hogwarts[0].compareByFacultyProperties(hogwarts[hogwarts.length - 1]));
+        System.out.println("Сравнение учеников из разных факультетов\n");
+        System.out.println(hogwarts[0].compare(hogwarts[hogwarts.length - 1]));
 
         System.out.println();
         System.out.println("Сравнение учеников по общим параметрам\n");
-        System.out.println(hogwarts[hogwarts.length - 1].compareByHogwartsProperties(hogwarts[rand(hogwarts.length - 1)]));
+        System.out.println(hogwarts[hogwarts.length - 1].compare(hogwarts[rand(hogwarts.length - 1)]));
     }
 
     private static int rand() {

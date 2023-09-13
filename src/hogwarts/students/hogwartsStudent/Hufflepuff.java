@@ -41,14 +41,10 @@ public class Hufflepuff extends Hogwarts {
                 "\t\tЧестность: " + honesty + "\n";
     }
 
-    @Override
-    public String compareByFacultyProperties(Hogwarts hogwarts) {
-        if (hogwarts instanceof Hufflepuff hufflepuff) {
-            return (hardWork + loyalty + honesty) > (hufflepuff.getHonesty() + hufflepuff.getHardWork() + hufflepuff.getLoyalty()) ?
-                    getFullName() + " лучший " + title + "ец чем " + hufflepuff.getFullName() :
-                    getFullName() + " хуже " + title + "ец чем " + hufflepuff.getFullName();
-        }
-        return getErrorMessage(hogwarts);
+    public String compare(Hufflepuff hufflepuff) {
+        return (hardWork + loyalty + honesty) > (hufflepuff.getHonesty() + hufflepuff.getHardWork() + hufflepuff.getLoyalty()) ?
+                getFullName() + " лучший " + title + "ец чем " + hufflepuff.getFullName() :
+                getFullName() + " хуже " + title + "ец чем " + hufflepuff.getFullName();
     }
 
 }

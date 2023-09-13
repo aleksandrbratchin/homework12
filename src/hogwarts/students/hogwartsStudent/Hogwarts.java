@@ -30,17 +30,10 @@ public abstract class Hogwarts extends Student {
         return transgressionRange;
     }
 
-    public String compareByHogwartsProperties(Hogwarts hogwarts) {
+    public String compare(Hogwarts hogwarts) {
         return (magicalPower + transgressionRange) > (hogwarts.getMagicalPower() + hogwarts.getTransgressionRange()) ?
                 getFullName() + " обладает большей мощностью магии чем " + hogwarts.getFullName() :
                 getFullName() + " обладает меньшей мощностью магии чем " + hogwarts.getFullName();
-    }
-
-    public abstract String compareByFacultyProperties(Hogwarts hogwarts);
-
-    protected String getErrorMessage(Hogwarts hogwarts) {
-        return "Нельзя сравнить студетнов из разных факультетов. " +
-                getFullName() + " - " + getTitle() + "ец, a " + hogwarts.getFullName() + " - " + hogwarts.getTitle() + "ец";
     }
 
 }

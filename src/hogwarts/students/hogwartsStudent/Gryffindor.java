@@ -44,14 +44,10 @@ public class Gryffindor extends Hogwarts {
         return bravery;
     }
 
-    @Override
-    public String compareByFacultyProperties(Hogwarts hogwarts) {
-        if (hogwarts instanceof Gryffindor gryffindor) {
-            return (nobility + honor + bravery) > (gryffindor.getNobility() + gryffindor.getHonor() + gryffindor.getBravery()) ?
-                    getFullName() + " лучший " + title + "ец чем " + gryffindor.getFullName() :
-                    getFullName() + " хуже " + title + "ец чем " + gryffindor.getFullName();
-        }
-        return getErrorMessage(hogwarts);
+    public String compare(Gryffindor gryffindor) {
+        return (nobility + honor + bravery) > (gryffindor.getNobility() + gryffindor.getHonor() + gryffindor.getBravery()) ?
+                getFullName() + " лучший " + title + "ец чем " + gryffindor.getFullName() :
+                getFullName() + " хуже " + title + "ец чем " + gryffindor.getFullName();
     }
 
 }

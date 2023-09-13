@@ -54,15 +54,11 @@ public class Slytherin extends Hogwarts {
                 "\t\tАмбициозность: " + ambition + "\n";
     }
 
-    @Override
-    public String compareByFacultyProperties(Hogwarts hogwarts) {
-        if (hogwarts instanceof Slytherin slytherin) {
-            return (cunning + determination + lustForPower + resourcefulness + ambition) >
-                    (slytherin.getCunning() + slytherin.getDetermination() + slytherin.getLustForPower() + slytherin.getAmbition() + slytherin.getResourcefulness()) ?
-                    getFullName() + " лучший " + title + "ец чем " + slytherin.getFullName() :
-                    getFullName() + " хуже " + title + "ец чем " + slytherin.getFullName();
-        }
-        return getErrorMessage(hogwarts);
+    public String compare(Slytherin slytherin) {
+        return (cunning + determination + lustForPower + resourcefulness + ambition) >
+                (slytherin.getCunning() + slytherin.getDetermination() + slytherin.getLustForPower() + slytherin.getAmbition() + slytherin.getResourcefulness()) ?
+                getFullName() + " лучший " + title + "ец чем " + slytherin.getFullName() :
+                getFullName() + " хуже " + title + "ец чем " + slytherin.getFullName();
     }
 
 }
